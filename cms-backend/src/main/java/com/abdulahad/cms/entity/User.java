@@ -10,10 +10,8 @@ public class User{
     @Column(name = "id")
     private int id;
 
-    @Column(name = "first_name")
-    private String firstName;
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "name")
+    private String name;
     @Column(name = "email")
     private String email;
     @Column(name = "phone_number")
@@ -26,9 +24,8 @@ public class User{
 
     }
 
-    public User(String firstName, String lastName, String email, String phoneNumber,String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String name, String email, String phoneNumber,String password) {
+        this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
@@ -40,22 +37,6 @@ public class User{
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -82,15 +63,11 @@ public class User{
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

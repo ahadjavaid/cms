@@ -1,4 +1,4 @@
-package com.abdulahad.cms.dao;
+package com.abdulahad.cms.repository;
 
 import com.abdulahad.cms.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
