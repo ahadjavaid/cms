@@ -1,11 +1,14 @@
 package com.abdulahad.cms.service;
 
 import com.abdulahad.cms.dto.UserDto;
+import com.abdulahad.cms.dto.UserLoginDto;
 import com.abdulahad.cms.dto.UserSignupDto;
 import com.abdulahad.cms.repository.UserRepository;
 import com.abdulahad.cms.entity.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,5 +39,21 @@ public class UserServiceImpl implements UserService {
             user.getEmail(),
             user.getPhoneNumber()
         );
+    }
+
+    @Override
+    public UserDto loginUser(UserLoginDto loginDto) {
+        Optional<User> optionalUser = userRepository.findByEmail(loginDto.getEmailOrPhone());
+        if(optionalUser.isEmpty()) {
+            optionalUser = userRepository.findByPhoneNumber(loginDto.getEmailOrPhone());
+            if(optionalUser.isEmpty()) {
+                throw new RuntimeException("Invalid email or phone number");
+            }
+        }
+        User user = optionalUser.get();
+        if(!passwordEncoder.matches(loginDto.getPassword(), user.getPassword())) {
+            throw new RuntimeException("Invalid password");
+        }
+        return null;
     }
 }
