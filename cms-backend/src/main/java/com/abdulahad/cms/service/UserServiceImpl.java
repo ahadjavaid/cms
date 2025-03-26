@@ -54,6 +54,11 @@ public class UserServiceImpl implements UserService {
         if(!passwordEncoder.matches(loginDto.getPassword(), user.getPassword())) {
             throw new RuntimeException("Invalid password");
         }
-        return null;
+        return new UserDto(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getPhoneNumber()
+        );
     }
 }
