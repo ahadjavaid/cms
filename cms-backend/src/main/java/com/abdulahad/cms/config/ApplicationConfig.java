@@ -22,7 +22,8 @@ public class ApplicationConfig {
 
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((authorizeRequests) -> authorizeRequests.requestMatchers("/user/signup").permitAll()
+                .authorizeHttpRequests((authorizeRequests) -> authorizeRequests.requestMatchers("/user/signup",
+                                "/user/login").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();

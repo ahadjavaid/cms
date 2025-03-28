@@ -1,6 +1,7 @@
 package com.abdulahad.cms.controller;
 
 import com.abdulahad.cms.dto.UserDto;
+import com.abdulahad.cms.dto.UserLoginDto;
 import com.abdulahad.cms.dto.UserSignupDto;
 import com.abdulahad.cms.entity.User;
 import com.abdulahad.cms.service.UserService;
@@ -23,5 +24,15 @@ public class UserController {
     @PostMapping("/signup")
     public ResponseEntity<UserDto> signup(@RequestBody UserSignupDto signupDto) {
         return new ResponseEntity<>(userService.signupUser(signupDto), HttpStatus.OK);
+    }
+
+//    @PostMapping("/login")
+//    public  ResponseEntity<UserDto> login(@RequestBody UserLoginDto loginDto) {
+//        return new ResponseEntity<>(userService.loginUser(loginDto),HttpStatus.OK);
+//    }
+
+    @PostMapping("/login")
+    public UserDto login(@RequestBody UserLoginDto loginRequest) {
+        return userService.loginUser(loginRequest);
     }
 }
