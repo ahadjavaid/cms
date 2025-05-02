@@ -1,0 +1,202 @@
+.contacts-page-container {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+	color: var(--color-text-primary);
+}
+
+.contacts-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.contacts-header h1 {
+	font-size: 1.8rem;
+	color: var(--color-text-primary);
+	margin: 0;
+}
+
+.contacts-header nav {
+	display: flex;
+	gap: 0.75rem;
+}
+
+.contacts-header nav button,
+.contacts-header nav .button-secondary-link {
+	padding: 0.5rem 1rem;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+	font-weight: 500;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.button-add-contact {
+	background-color: var(--color-secondary);
+	color: white;
+}
+.button-add-contact:hover {
+	background-color: #16a34a;
+}
+
+.button-secondary-link {
+	background-color: transparent;
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+.button-secondary-link:hover {
+	background-color: rgba(14, 165, 233, 0.1);
+}
+
+.button-logout {
+	background-color: var(--color-accent);
+	color: white;
+}
+.button-logout:hover {
+	background-color: #ea580c;
+}
+
+.contacts-content {
+	background-color: var(--color-surface);
+	padding: 1.5rem;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contacts-content h2 {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	color: var(--color-text-primary);
+}
+
+
+.search-bar {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.search-input {
+	flex-grow: 1;
+	padding: 0.75rem 1rem;
+	border: 1px solid #cbd5e1;
+	border-radius: 6px;
+	font-size: 1rem;
+	color: var(--color-text-primary);
+}
+.search-input:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+.button-search {
+	padding: 0.75rem 1.2rem;
+	border: none;
+	border-radius: 6px;
+	background-color: var(--color-primary);
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+.button-search:hover {
+	background-color: var(--color-primary-hover);
+}
+.button-search:disabled {
+	background-color: #94a3b8;
+	cursor: not-allowed;
+}
+.loading-message,
+.no-contacts-message {
+	text-align: center;
+	padding: 2rem 0;
+	color: var(--color-text-secondary);
+}
+.error-message {
+	color: var(--color-error);
+	background-color: rgba(239, 68, 68, 0.1);
+	border: 1px solid rgba(239, 68, 68, 0.3);
+	padding: 0.75rem;
+	border-radius: 6px;
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	text-align: center;
+}
+
+
+.contacts-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.contact-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-background);
+	padding: 1rem 1.25rem;
+	border-radius: 6px;
+	border: 1px solid #e2e8f0;
+	transition: box-shadow 0.2s;
+}
+.contact-item:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+.contact-name {
+	font-weight: 600;
+	color: var(--color-text-primary);
+}
+
+.contact-detail {
+	font-size: 0.9rem;
+	color: var(--color-text-secondary);
+}
+
+.contact-actions {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.contact-actions button {
+	padding: 0.4rem 0.8rem;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	font-size: 0.85rem;
+	transition: background-color 0.2s;
+}
+
+.button-edit {
+	background-color: var(--color-primary);
+	color: white;
+}
+.button-edit:hover {
+	background-color: var(--color-primary-hover);
+}
+
+.button-delete {
+	background-color: var(--color-error);
+	color: white;
+}
+.button-delete:hover {
+	background-color: #dc2626;
+}
+.button-delete:disabled {
+	background-color: #fda4af;
+	cursor: not-allowed;
+}
